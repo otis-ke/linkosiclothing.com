@@ -1,0 +1,210 @@
+/* General font styling - smaller sizes */
+.cormorant-garamond-regular {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 12px; /* Smaller font size */
+}
+
+.cormorant-garamond-semibold {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 14px; /* Smaller font size */
+}
+
+.cormorant-garamond-medium {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 12px; /* Smaller font size */
+}
+
+/* Heading font size */
+h2.cormorant-garamond-regular {
+  font-size: 24px; /* Adjust font size for h2 */
+}
+
+/* Product Header Image - Full Width on All Devices */
+.product-header-image {
+  width: 100vw; /* Full viewport width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure image covers the container */
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* Layout of product items */
+.new-product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 5px;
+  border: none;
+  margin: 0;
+}
+
+.new-product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.new-product-price {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Action buttons - Horizontally aligned, no decoration */
+.new-action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center; /* Ensure vertical alignment */
+  width: 100%;
+}
+
+/* Buttons styling: simple text, icons only */
+.new-buy-now-btn,
+.new-cart-icon-btn,
+.new-whatsapp-icon-btn {
+  padding: 8px 12px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px; /* Larger font for button text */
+  text-decoration: none;
+  color: inherit;
+}
+
+.new-cart-icon-btn svg,
+.new-whatsapp-icon-btn svg {
+  width: 18px; /* Slightly increased size */
+  height: 18px;
+  fill: currentColor; /* Icons inherit the text color */
+}
+
+.new-buy-now-btn:hover,
+.new-cart-icon-btn:hover,
+.new-whatsapp-icon-btn:hover {
+  color: #444; /* Subtle hover effect */
+}
+
+/* Full-page modal for product details */
+.full-page-modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+}
+
+.full-page-content {
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
+  background-color: white;
+}
+
+/* Close modal button ("X") */
+.close-modal {
+  font-size: 1rem; /* Larger size for "X" */
+  color: #270101;
+  cursor: pointer;
+}
+
+.full-page-header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.full-page-main-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.full-page-gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.full-page-gallery-image {
+  width: 150px;
+  height: auto;
+}
+
+.full-page-actions {
+  margin-top: 20px;
+}
+
+.full-page-buy-now-btn,
+.full-page-whatsapp-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.full-page-buy-now-btn:hover,
+.full-page-whatsapp-btn:hover {
+  color: #444;
+}
+
+/* Responsive Design for Small Devices */
+@media (max-width: 768px) {
+  .product-header-image {
+    width: 100vw; /* Full viewport width on small devices */
+    object-fit: cover;
+  }
+
+  h2.cormorant-garamond-regular {
+    font-size: 18px;
+  }
+
+  .new-action-buttons {
+    justify-content: center; /* Centered buttons for small screens */
+  }
+
+  .new-cart-icon-btn svg,
+  .new-whatsapp-icon-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Large Devices - 4 Items per Row */
+@media (min-width: 1024px) {
+  .new-product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns grid for large screens */
+    gap: 20px;
+  }
+
+  .new-product-item {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .new-product-item img {
+    width: 100%;
+    height: auto; /* Ensure images cover the full width */
+    border: none;
+  }
+
+  .new-product-item h4 {
+    font-family: 'Bodoni Moda SC', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 10px 0;
+    text-align: center;
+  }
+}

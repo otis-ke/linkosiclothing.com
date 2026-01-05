@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+* {
+  font-family: 'Bodoni Moda SC', serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Adjust weight as needed */
+}
+
+.shop-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.shop-section h2 {
+  font-family: 'Bodoni Moda SC', serif; /* Ensure the font is applied */
+  font-weight: 400; /* Use the same weight */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+}
+
+.collections-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.collection-section {
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* Animate from opposite sides */
+.collection-section[data-direction="right"] {
+  transform: translateX(100px); /* Start from the right */
+}
+.collection-section[data-direction="left"] {
+  transform: translateX(-100px); /* Start from the left */
+}
+
+.collection-section.animate {
+  opacity: 1;
+  transform: translateX(0); /* Moves to its original position */
+}
+
+.collection-section h3 {
+  font-family: 'Bodoni Moda SC', serif; /* Ensure the font is applied */
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.product-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .collections-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* On small screens, animate from top and bottom instead */
+  .collection-section[data-direction="right"],
+  .collection-section[data-direction="left"] {
+    transform: translateY(100px); /* Start from below */
+  }
+
+  .collection-section.animate {
+    transform: translateY(0); /* Moves to its original position */
+  }
+}
