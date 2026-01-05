@@ -29,7 +29,7 @@ const Contact = () => {
     if (isOpen || isFormOpen) {
       document.body.classList.add('blurred');  // Add blur class to body
     } else {
-      document.body.classList.remove('blurred'); // Remove blur class from body
+      document.body.classList.remove('blurred'); // Remove blur class from body hjrg
     }
   }, [isOpen, isFormOpen]);
 
